@@ -24,6 +24,16 @@ $ProvisionedAppPackageNames = @(
     "Microsoft.WindowsCamera"
     "Microsoft.WindowsFeedbackHub"
     "Microsoft.WindowsAlarms"
+    "Microsoft.WindowsCalculator"
+    "Microsoft.WindowsMaps"
+    "Microsoft.Microsoft3DViewer"
+    "Microsoft.Screensketch"
+    "Microsoft.Wallet"
+    "Microsoft.XboxGameOverlay"
+    "Microsoft.XboxGamingOverlay"
+    "Microsoft.XboxIdentityProvider"
+    "Microsoft.XboxSpeechToTextOverlay"
+    "Microsoft.MSPaint"
 )
 
 foreach ($ProvisionedAppName in $ProvisionedAppPackageNames) {
