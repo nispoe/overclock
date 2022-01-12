@@ -51,3 +51,6 @@ foreach ($ProvisionedAppName in $ProvisionedAppPackageNames) {
 
 ps onedrive | Stop-Process -Force
 start-process "$env:windir\SysWOW64\OneDriveSetup.exe" "/uninstall"
+
+Invoke-WebRequest -Uri 'https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe' -OutFile 'C:\SteamSetup.exe'
+SteamSetup.exe /S
