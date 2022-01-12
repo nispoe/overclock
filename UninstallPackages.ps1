@@ -14,6 +14,11 @@ $ProvisionedAppPackageNames = @(
     "Microsoft.XboxApp"
     "Microsoft.ZuneMusic"
     "Microsoft.ZuneVideo"
+    "Microsoft.MicrosoftEDViewer"
+    "Microsoft.MicrosoftSolitaireCollection"
+    "Microsoft.MicrosoftStickyNotes"
+    "Microsoft.YourPhone"
+    
 )
 
 foreach ($ProvisionedAppName in $ProvisionedAppPackageNames) {
