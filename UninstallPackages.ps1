@@ -18,7 +18,12 @@ $ProvisionedAppPackageNames = @(
     "Microsoft.MicrosoftSolitaireCollection"
     "Microsoft.MicrosoftStickyNotes"
     "Microsoft.YourPhone"
-    
+    "SpotifyAB.SpotifyMusic"
+    "Microsoft.MixedReality.Portal"
+    "Microsoft.WindowsSoundRecorder"
+    "Microsoft.WindowsCamera"
+    "Microsoft.WindowsFeedbackHub"
+    "Microsoft.WindowsAlarms"
 )
 
 foreach ($ProvisionedAppName in $ProvisionedAppPackageNames) {
