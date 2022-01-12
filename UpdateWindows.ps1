@@ -1,3 +1,4 @@
 Install-PackageProvider NuGet -Force
-Install-Module PSWindowsUpdate
+Set-PSRepository PSGallery -InstallationPolicy Trusted
+Install-Module PSWindowsUpdate -Repository PSGallery
 Get-WindowsUpdate -AcceptAll -Install -AutoReboot
