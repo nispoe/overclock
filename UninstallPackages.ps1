@@ -42,6 +42,11 @@ $ProvisionedAppPackageNames = @(
     "Microsoft.Windows.Photos"
     "Microsoft.WindowsStore"
     "Microsoft.Xbox.TCUI"
+    "Microsoft.XboxGameCallableUI"
+    "Windows.PrintDialog"
+    "Microsoft.Windows.NarratorQuickStart"
+    "Microsoft.BioEnrollment"
+    ""
 )
 
 foreach ($ProvisionedAppName in $ProvisionedAppPackageNames) {
