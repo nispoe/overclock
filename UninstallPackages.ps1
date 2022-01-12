@@ -34,6 +34,14 @@ $ProvisionedAppPackageNames = @(
     "Microsoft.XboxIdentityProvider"
     "Microsoft.XboxSpeechToTextOverlay"
     "Microsoft.MSPaint"
+    "Microsoft.HEIFImageExtension"
+    "Microsoft.StorePurchaseApp"
+    "Microsoft.VP9VideoExtensions"
+    "Microsoft.WebMediaExtensions"
+    "Microsoft.WebpImageExtension"
+    "Microsoft.Windows.Photos"
+    "Microsoft.WindowsStore"
+    "Microsoft.Xbox.TCUI"
 )
 
 foreach ($ProvisionedAppName in $ProvisionedAppPackageNames) {
