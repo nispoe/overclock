@@ -5,7 +5,7 @@ if (!(Test-Path $nispoePath)) {
 }
 
 # Install Steam (This is where I have my 3DMark and EVGA Precision X1 software)
-if (!(Test-Path "$nispoePath"\SteamSetup.exe")) {
+if (!(Test-Path "$nispoePath\SteamSetup.exe")) {
     Invoke-WebRequest -Uri "https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe" -OutFile $nispoePath"\SteamSetup.exe"
     Start-Process -FilePath $nispoePath"\SteamSetup.exe" -ArgumentList "/S"
 }
