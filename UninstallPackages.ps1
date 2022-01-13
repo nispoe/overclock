@@ -1,4 +1,4 @@
-$ProvisionedAppPackageNames = @(
+$PackageNames = @(
     "Microsoft.549981C3F5F10"                       # Cortana
     "Microsoft.BingWeather"                         # Microsoft Bing Weather
     "Microsoft.BingFinance"                         # Microsoft Bing Finance
@@ -46,9 +46,9 @@ $ProvisionedAppPackageNames = @(
     "Microsoft.Screensketch"                        # Testing removal Microsoft Screen Sketch (Snipping Tool)
 )
 
-foreach ($ProvisionedAppName in $ProvisionedAppPackageNames) {
-    Get-AppxPackage -Name $ProvisionedAppName -AllUsers | Remove-AppxPackage
-    Get-AppXProvisionedPackage -Online | Where-Object DisplayName -EQ $ProvisionedAppName | Remove-AppxProvisionedPackage -Online
+foreach ($AppName in $PackageNames) {
+    Get-AppxPackage -Name $AppName -AllUsers | Remove-AppxPackage
+    Get-AppXProvisionedPackage -Online | Where-Object DisplayName -EQ $AppName | Remove-AppxProvisionedPackage -Online
 }
 
 if (Test-Path "$env:windir\SysWOW64\OneDriveSetup.exe") {
