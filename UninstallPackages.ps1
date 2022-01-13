@@ -42,7 +42,6 @@ $ProvisionedAppPackageNames = @(
     "Microsoft.ZuneVideo"                           # Microsoft Zune Video
     "SpotifyAB.SpotifyMusic"                        # Spotify
     "Disney.37853FC22B2CE"                          # Disney+
-    "Microsoft.Windows.ShellExperienceHost"         # Testing removal Microsoft Windows Shell Experience Host (Universal Windows)
     "Microsoft.DesktopAppInstaller"                 # Testing removal Microsoft Desktop App Installer (Double Click Installer)
     "Microsoft.Screensketch"                        # Testing removal Microsoft Screen Sketch (Snipping Tool)
 )
