@@ -3,6 +3,17 @@ Invoke-WebRequest -Uri "https://steamcdn-a.akamaihd.net/client/installer/steamcm
 Expand-Archive $nispoepath"\steamcmd.zip" -DestinationPath $nispoepath"\steamcmd"
 Start-Process -FilePath $nispoepath"\steamcmd\steamcmd.exe"
 
+# Create nispoe directory
+$nispoePath = "C:\nispoe"
+if (!(Test-Path $nispoePath)) {
+    New-Item -ItemType "directory" -Path $nispoePath
+}
+
+# Install Steam, found can do this easier through chocolatey
+if (!(Test-Path "$nispoePath\SteamSetup.exe")) {
+    Invoke-WebRequest -Uri "https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe" -OutFile "$nispoePath\SteamSetup.exe"
+    Start-Process -FilePath "$nispoePath\SteamSetup.exe" -ArgumentList "/S"
+}
 
 # Stuff I was messing with trying to make work related to automating the install of steam apps
 # GitHub Link for Steam PS - https://github.com/hjorslev/SteamPS
