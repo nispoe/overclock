@@ -1,6 +1,6 @@
 # Create nispoe directory
 $nispoePath = "C:\nispoe"
-if (Test-Path $nispoePath) {
+if (-Not (Test-Path $nispoePath)) {
     New-Item -ItemType "directory" -Path $nispoePath
 }
 
