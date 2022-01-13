@@ -4,7 +4,7 @@ Invoke-WebRequest -Uri "https://cdn.cloudflare.steamstatic.com/client/installer/
 Start-Process -FilePath $nispoePath"\SteamSetup.exe" -ArgumentList "/S"
 
 # Create place shortcuts for startup
-$startupPath = $HOME+"\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+$startupPath = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/shortcuts"
 
 Invoke-WebRequest -Uri $shortcutURIPath"/3DMark.url" -OutFile $startupPath"\3DMark.url"
