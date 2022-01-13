@@ -14,4 +14,3 @@ if (!(Test-Path "$nispoePath\SteamSetup.exe")) {
 $startupPath = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/shortcuts"
 Invoke-WebRequest -Uri "$shortcutURIPath/3DMark.url" -OutFile "$startupPath\3DMark.url"
-Invoke-WebRequest -Uri "$shortcutURIPath/EVGA%20Precision%20X1.url" -OutFile "$startupPath\EVGA%20Precision%20X1.url"
