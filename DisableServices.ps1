@@ -1,21 +1,25 @@
-$ServiceNames = @(
+$Services = @(
     "AudioendpointBuilder"                          # Windows Audio EndpointBuilder
     "Audiosrv"                                      # Windows Audio
-    "WinDefend"                                     # Microsoft Windows Defender Antivirus Service
-    "WdNisSvc"                                      # Microsoft Defender Antivirus Network Inspection Service
-    "wscsvc"                                        # Security Center
     "Spooler"                                       # Print Spooler
-    "TabletInputService"                            # Touch Keyboard and Handwriting Panel pen and ink functionality
     "DiagTrack"                                     # Connected User Experiences and Telemetry
     "DusmSvc"                                       # Data Usage
-    "DoSvc"                                         # Delivery Optimization
     "iphlpsvc"                                      # IP Hlper
     "PcaSvc"                                        # Program Compatibility Assistant Service
-    "SecurityHealthService"                         # Windows Security Service
     "Wcmsvc"                                        # Windows Connection Manager
+    "CDPSvc"                                        # Connected Devices Platform Service
+    "NcbService"                                    # Network Connection Broker (Store Apps to receive notification from the internet)
+    "DPS"                                           # Diagnostic Policy Service
+    "LanmanServer"                                  # Server (file and print sharing support over network)
+    "ShellHWDetection"                              # Shell Hardware Detection (AutoPlay hardware notifications)
+    "SysMain"                                       # Maintains and improves system performance over time
+    "UsoSvc"                                        # Update Orchestrator Service (Manages Windows Updates)
+    "WbioSrvc"                                      # Windows Biometric Service
+    "FontCache"                                     # Windows Font Cache Service
+    "WSearch"                                       # Windows Search
 )
 
-foreach ($Service in $ServiceNames) {
+foreach ($Service in $Services) {
     Stop-Service -Name $Service -Force
     Set-Service -Name $Service -Status stopped -StartupType disabled
 }
