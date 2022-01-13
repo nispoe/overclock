@@ -52,6 +52,6 @@ foreach ($ProvisionedAppName in $ProvisionedAppPackageNames) {
 }
 
 if (Test-Path "$env:windir\SysWOW64\OneDriveSetup.exe") {
-    ps onedrive | Stop-Process -Force
+    Get-Process onedrive | Stop-Process -Force
     start-process "$env:windir\SysWOW64\OneDriveSetup.exe" "/uninstall"
 }
