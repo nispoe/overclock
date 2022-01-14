@@ -7,7 +7,7 @@ if (!(Test-Path "C:\Program Files (x86)\Steam\steam.exe")) {
 }
 
 # Install CPUz
-if (!(Test-Path "C:\Program Files (x86)\CPUID\CPU-Z\cpuz.exe")) {
+if (!(Test-Path "C:\Program Files\CPUID\CPU-Z\cpuz.exe")) {
     choco install cpu-z.install --force -y
 }
 
