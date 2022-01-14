@@ -9,4 +9,4 @@ if (!(Test-Path "C:\ProgramData\chocolatey\lib\rufus\tools\rufus.exe")) {
 }
 
 # Start Rufus
-Start-Process -FilePath "C:\ProgramData\chocolatey\lib\rufus\tools\rufus.exe"
+Start-Process "rufus"
