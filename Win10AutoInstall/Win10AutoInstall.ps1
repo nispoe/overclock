@@ -1,4 +1,8 @@
+# Collect information for script
 $driveLetter = Read-Host "Enter drive letter"
+$computerName = Read-Host "Enter Computer Name"
+$loginName = Read-Host "Enter Login Name"
+
 if (Test-Path "$driveLetter`:\sources") {
     # Generate the install.wim file under sources directory
     dism /Export-Image /SourceImageFile:"$driveLetter`:\sources\install.esd" /SourceIndex:6 /DestinationImageFile:"$driveLetter`:\sources\install.wim" /Compress:Max /CheckIntegrity
@@ -17,8 +21,6 @@ $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/Win1
 Invoke-WebRequest -Uri "$shortcutURIPath/autounattend.xml" -OutFile "$nispoePath\autounattend.xml"
 
 # Replace Computer Name and Login Name
-$computerName = Read-Host "Enter Computer Name"
-$loginName = Read-Host "Enter Login Name"
 $autounattendFile = "$nispoePath\autounattend.xml"
 (Get-Content -path $autounattendFile -Raw) -replace "eopsin","$computerName" | Set-Content -Path $autounattendFile
 (Get-Content -path $autounattendFile -Raw) -replace "nispoe","$loginName" | Set-Content -Path $autounattendFile
