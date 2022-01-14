@@ -4,6 +4,9 @@ if (!(Test-Path "C:\ProgramData\chocolatey\choco.exe")) {
 }
 
 # Install Rufus Client
-if (!(Test-Path "C:\Program Files (x86)\Steam\steam.exe")) {
+if (!(Test-Path "C:\ProgramData\chocolatey\lib\rufus\tools\rufus.exe")) {
     choco install rufus --force -y
 }
+
+# Start Rufus
+Start-Process -FilePath "C:\ProgramData\chocolatey\lib\rufus\tools\rufus.exe"
