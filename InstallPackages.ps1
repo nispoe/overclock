@@ -1,11 +1,25 @@
 # Install Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
+# Install Steam Client
+if (!(Test-Path "C:\Program Files (x86)\Steam\steam.exe")) {
+    choco install steam-client --force -y
+}
+
 # Install CPUz
-choco install steam-client --force -y
-choco install cpu-z.install --force -y
-choco install hwinfo --force -y
-choco install nvidia-display-driver --force -y
+if (!(Test-Path "C:\Program Files (x86)\CPUID\CPU-Z\cpuz.exe")) {
+    choco install cpu-z.install --force -y
+}
+
+# Install HWInfo
+if (!(Test-Path "C:\Program Files\HWiNFO64\HWiNFO64.exe")) {
+    choco install hwinfo --force -y
+}
+
+# Install Nvidia Display Driver
+if (!(Test-Path "C:\Program Files\NVIDIA Corporation\Control Panel Client\nvcplui.exe")) {
+    choco install nvidia-display-driver --force -y
+}
 
 # Add shortcuts to system startup
 $startupPath = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
