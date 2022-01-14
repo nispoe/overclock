@@ -12,13 +12,21 @@ if (!(Test-Path $nispoePath)) {
     New-Item -ItemType "directory" -Path $nispoePath
 }
 
-# Copy autounattend.xml file to modify
+# Copy autounattend.xml file to nispoe working directory to modify
 $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/Win10AutoInstall"
 Invoke-WebRequest -Uri "$shortcutURIPath/autounattend.xml" -OutFile "$nispoePath\autounattend.xml"
 
+# Replace Computer Name and Login Name
 $computerName = Read-Host "Enter Computer Name"
 $loginName = Read-Host "Enter Login Name"
+$autounattendFile = "$nispoePath\autounattend.xml"
+(Get-Content -path $autounattendFile -Raw) -replace "eopsin","$computerName" | Set-Content -Path $autounattendFile
+(Get-Content -path $autounattendFile -Raw) -replace "nispoe","$loginName" | Set-Content -Path $autounattendFile
 
+# Copy autoattend.xml and install_Windows 10 Pro.clg files to USB drive
+Copy-Item $autounattendFile -Destination "$driveLetter`:\"
+Invoke-WebRequest -Uri "$shortcutURIPath/install_Windows 10 Pro.clg" -OutFile "$driveLetter`:\sources\install_Windows 10 Pro.clg"
 
-(Get-Content -path C:\ReplaceDemo.txt -Raw) -replace 'brown','white'
-The quick white fox jumped over the lazy dog
+# Cleanup nispoe working directory
+Remove-Item -LiteralPath $nispoePath -Force -Recurse
+
