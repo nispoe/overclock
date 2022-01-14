@@ -3,6 +3,9 @@ Invoke-WebRequest -Uri "https://steamcdn-a.akamaihd.net/client/installer/steamcm
 Expand-Archive $nispoepath"\steamcmd.zip" -DestinationPath $nispoepath"\steamcmd"
 Start-Process -FilePath $nispoepath"\steamcmd\steamcmd.exe"
 
+# Windows Update with Reboot
+Get-WindowsUpdate -AcceptAll -Install -AutoReboot
+
 # Create nispoe directory
 $nispoePath = "C:\nispoe"
 if (!(Test-Path $nispoePath)) {
