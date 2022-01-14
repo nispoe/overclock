@@ -10,7 +10,7 @@ choco install hwinfo --force -y
 $startupPath = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/shortcuts"
 Invoke-WebRequest -Uri "$shortcutURIPath/3DMark.url" -OutFile "$startupPath\3DMark.url"
-Invoke-WebRequest -Uri "$shortcutURIPath/CPUID CPU-Z.lnk" -OutFile "$startupPath\CPUID CPU-Z.lnk"
+
 
 # Add shorcuts to system desktop
 Invoke-WebRequest -Uri "$shortcutURIPath/HWiNFO64.lnk" -OutFile "$HOME\Desktop\HWiNFO64.lnk"
