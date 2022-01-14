@@ -23,10 +23,16 @@ if (!(Test-Path "C:\Program Files\NVIDIA Corporation\Control Panel Client\nvcplu
     choco install nvidia-display-driver --force -y
 }
 
-# Add shortcuts to system startup
+# Startup and shorcut paths
 $startupPath = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/shortcuts"
-Invoke-WebRequest -Uri "$shortcutURIPath/3DMark.url" -OutFile "$startupPath\3DMark.url"
+
+# Add 3DMark to the startup folder to trigger start when windows starts
+if (!(Test-Path "$startupPath\3DMark.url")) {
+    Invoke-WebRequest -Uri "$shortcutURIPath/3DMark.url" -OutFile "$startupPath\3DMark.url"
+}
 
 # Add shorcuts to system desktop
-Invoke-WebRequest -Uri "$shortcutURIPath/HWiNFO64.lnk" -OutFile "$HOME\Desktop\HWiNFO64.lnk"
+if (!(Test-Path "$HOME\Desktop\HWiNFO64.lnk")) {
+    Invoke-WebRequest -Uri "$shortcutURIPath/HWiNFO64.lnk" -OutFile "$HOME\Desktop\HWiNFO64.lnk"
+}
