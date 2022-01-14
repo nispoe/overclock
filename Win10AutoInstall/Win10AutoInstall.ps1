@@ -1,4 +1,4 @@
-# Collect information for script
+# Collect information for script 
 $driveLetter = Read-Host "Enter drive letter"
 $computerName = Read-Host "Enter Computer Name"
 $loginName = Read-Host "Enter Login Name"
