@@ -20,6 +20,9 @@ if (Test-Path "$driveLetter`:\sources") {
     # Copy install.wim to USB drive
     Start-BitsTransfer -Source "$nispoePath\install.wim" -Destination "$driveLetter`:\sources\" -Description "$nispoePath\install.wim to $driveLetter`:\sources\install.wim" -DisplayName "Copying file"
 
+    # Figured out that the install.esd is no longer needed after the install.wim file is in place
+    Remove-Item "$nispoePath\install.esd"
+
     # Copy autounattend.xml file to nispoe working directory to modify
     $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/Win10AutoInstall"
     Invoke-WebRequest -Uri "$shortcutURIPath/autounattend.xml" -OutFile "$nispoePath\autounattend.xml"
