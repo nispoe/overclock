@@ -18,7 +18,7 @@ if (Test-Path "$driveLetter`:\sources") {
     # Generate the install.wim file under sources directory
     dism /Export-Image /SourceImageFile:"$nispoePath\install.esd" /SourceIndex:6 /DestinationImageFile:"$nispoePath\install.wim" /CheckIntegrity
     # Copy install.wim to USB drive
-    Start-BitsTransfer -Source "$nispoePath\install.wim" -Destination "$driveLetter`:\sources\" -Description "Copying wim file" -DisplayName "Copy"
+    Start-BitsTransfer -Source "$nispoePath\install.wim" -Destination "$driveLetter`:\sources\" -Description "$nispoePath\install.wim to $driveLetter`:\sources\install.wim" -DisplayName "Copying wim file"
 
     # Copy autounattend.xml file to nispoe working directory to modify
     $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/Win10AutoInstall"
