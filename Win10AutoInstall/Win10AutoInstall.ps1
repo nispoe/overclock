@@ -3,17 +3,22 @@ $driveLetter = Read-Host "Enter USB drive letter"
 $computerName = Read-Host "Enter Computer Name"
 $loginName = Read-Host "Enter Login Name"
 
-if (Test-Path "$driveLetter`:\sources") {
-    # Generate the install.wim file under sources directory
-    dism /Export-Image /SourceImageFile:"$driveLetter`:\sources\install.esd" /SourceIndex:6 /DestinationImageFile:"$driveLetter`:\sources\install.wim" /CheckIntegrity
-} else {
-    Write-Output "Drive letter does not look right, try running again."
-}
-
 # Create nispoe working directory
 $nispoePath = "C:\nispoe"
 if (!(Test-Path $nispoePath)) {
     New-Item -ItemType "directory" -Path $nispoePath
+}
+
+if (Test-Path "$driveLetter`:\sources") {
+    # Found the generation of the wim process faster on disk so copy to USB after file is generated.
+    # Copy install.esd to workind directory
+    Copy-Item "$driveLetter`:\sources\install.esd" -Destination "$nispoePath"
+    # Generate the install.wim file under sources directory
+    dism /Export-Image /SourceImageFile:"$nispoePath\install.esd" /SourceIndex:6 /DestinationImageFile:"$nispoePath\install.wim" /CheckIntegrity
+    # Copy install.wim to USB drive
+    Copy-Item "$nispoePath\install.esd" -Destination "$driveLetter`:\sources\"
+} else {
+    Write-Output "Drive letter does not look right, try running again."
 }
 
 # Copy autounattend.xml file to nispoe working directory to modify
