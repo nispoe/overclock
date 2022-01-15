@@ -36,3 +36,7 @@ if (!(Test-Path "$startupPath\3DMark.url")) {
 if (!(Test-Path "$HOME\Desktop\HWiNFO64.lnk")) {
     Invoke-WebRequest -Uri "$shortcutURIPath/HWiNFO64.lnk" -OutFile "$HOME\Desktop\HWiNFO64.lnk"
 }
+
+# Change background image
+Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value "$shortcutURIPath/images/windowsBackground.png"
+Invoke-Expression "rundll32.exe user32.dll, UpdatePerUserSystemParameters"
