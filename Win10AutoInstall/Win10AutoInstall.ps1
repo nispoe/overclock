@@ -7,7 +7,7 @@ if (Test-Path "$driveLetter`:\sources") {
     # Generate the install.wim file under sources directory
     dism /Export-Image /SourceImageFile:"$driveLetter`:\sources\install.esd" /SourceIndex:6 /DestinationImageFile:"$driveLetter`:\sources\install.wim" /Compress:Max /CheckIntegrity
 } else {
-    Write-Output "Drive does not contain 'sources' directory try again"
+    Write-Output "Drive letter does not look right, try running again."
 }
 
 # Create nispoe working directory
