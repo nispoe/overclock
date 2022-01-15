@@ -1,3 +1,5 @@
+Import-Module BitsTransfer
+
 # Collect information for script 
 $driveLetter = Read-Host "Enter USB drive letter"
 $computerName = Read-Host "Enter Computer Name"
@@ -16,7 +18,7 @@ if (Test-Path "$driveLetter`:\sources") {
     # Generate the install.wim file under sources directory
     dism /Export-Image /SourceImageFile:"$nispoePath\install.esd" /SourceIndex:6 /DestinationImageFile:"$nispoePath\install.wim" /CheckIntegrity
     # Copy install.wim to USB drive
-    Copy-Item "$nispoePath\install.esd" -Destination "$driveLetter`:\sources\"
+    Start-BitsTransfer -Source "$nispoePath\install.wim" -Destination "$driveLetter`:\sources\" -Description "Copying wim file" -DisplayName "Copy"
 } else {
     Write-Output "Drive letter does not look right, try running again."
 }
