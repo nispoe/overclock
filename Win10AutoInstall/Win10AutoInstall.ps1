@@ -1,5 +1,5 @@
 # Collect information for script 
-$driveLetter = Read-Host "Enter drive letter"
+$driveLetter = Read-Host "Enter USB drive letter"
 $computerName = Read-Host "Enter Computer Name"
 $loginName = Read-Host "Enter Login Name"
 
