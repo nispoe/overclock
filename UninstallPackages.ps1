@@ -53,5 +53,5 @@ foreach ($package in $packages) {
 
 if (Test-Path "$env:windir\SysWOW64\OneDriveSetup.exe") {
     Get-Process onedrive | Stop-Process -Force
-    start-process "$env:windir\SysWOW64\OneDriveSetup.exe" "/uninstall"
+    Start-Process "$env:windir\SysWOW64\OneDriveSetup.exe" "/uninstall"
 }
