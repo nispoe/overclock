@@ -1,4 +1,5 @@
 $Services = @(
+# Windows 10
     "AudioendpointBuilder"                          # Windows Audio EndpointBuilder
     "Audiosrv"                                      # Windows Audio
     "Spooler"                                       # Print Spooler
@@ -17,6 +18,10 @@ $Services = @(
     "WbioSrvc"                                      # Windows Biometric Service
     "FontCache"                                     # Windows Font Cache Service
     "WSearch"                                       # Windows Search
+# Windows 11
+    "lfsvc"                                         # Geolocation Service
+    "InstallService"                                # Microsoft Store Install Service
+    "nsi"
 )
 
 foreach ($Service in $Services) {
