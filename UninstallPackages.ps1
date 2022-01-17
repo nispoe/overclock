@@ -1,4 +1,4 @@
-$packages = @(
+$packages10 = @(                                      # Windows 10 Packages
     "Microsoft.549981C3F5F10"                       # Cortana
     "Microsoft.BingWeather"                         # Microsoft Bing Weather
     "Microsoft.BingFinance"                         # Microsoft Bing Finance
@@ -46,10 +46,29 @@ $packages = @(
     "Microsoft.Screensketch"                        # Testing removal Microsoft Screen Sketch (Snipping Tool)
 )
 
-foreach ($package in $packages) {
+$packages11 = @(                                    # Windows 11 Packages
+    "Microsoft.DesktopAppInstaller"                 # Microsoft Desktop App Installer
+    "Microsoft.GamingApp"                           # Microsoft GamingApp
+    "Microsoft.Paint"                               # Microsoft Paint
+    "Microsoft.PowerAutomateDesktop"                # Microsoft Power Automate Desktop
+    "Microsoft.SecHealthUI"                         # Microsoft Update Health Tools
+    "Microsoft.Todos"                               # Microsoft To Do
+    "MicrosoftTeams"                                # Microsoft Teams
+)
+
+foreach ($package in $packages10) {
     Get-AppxPackage -Name $package -AllUsers | Remove-AppxPackage
     Get-AppXProvisionedPackage -Online | Where-Object DisplayName -EQ $package | Remove-AppxProvisionedPackage -Online
 }
+
+# Additional things to remove in Windows 11
+if([System.Environment]::OSVersion.Version.Build -eq 22000) {
+    foreach ($package in $packages11) {
+        Get-AppxPackage -Name $package -AllUsers | Remove-AppxPackage
+        Get-AppXProvisionedPackage -Online | Where-Object DisplayName -EQ $package | Remove-AppxProvisionedPackage -Online
+    }
+}
+
 
 if (Test-Path "$env:windir\SysWOW64\OneDriveSetup.exe") {
     Get-Process onedrive | Stop-Process -Force
