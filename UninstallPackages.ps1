@@ -52,6 +52,7 @@ $packages11 = @(                                    # Windows 11 Packages
     "Microsoft.PowerAutomateDesktop"                # Microsoft Power Automate Desktop
     "Microsoft.Todos"                               # Microsoft To Do
     "MicrosoftTeams"                                # Microsoft Teams
+    "Microsoft.OneDriveSync"                        # Microsoft OneDrive Sync
 )
 
 foreach ($package in $packages10) {
