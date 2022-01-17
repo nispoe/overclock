@@ -1,5 +1,4 @@
-$Services = @(
-# Windows 10
+$Services10 = @(                                    # Windows 10 Services
     "AudioendpointBuilder"                          # Windows Audio EndpointBuilder
     "Audiosrv"                                      # Windows Audio
     "Spooler"                                       # Print Spooler
@@ -18,12 +17,21 @@ $Services = @(
     "WbioSrvc"                                      # Windows Biometric Service
     "FontCache"                                     # Windows Font Cache Service
     "WSearch"                                       # Windows Search
-# Windows 11
+)
+
+$Services11 = @(                                    # Windows 11 Services
     "lfsvc"                                         # Geolocation Service
     "InstallService"                                # Microsoft Store Install Service
 )
 
-foreach ($Service in $Services) {
+foreach ($Service in $Services10) {
     Stop-Service -Name $Service -Force
     Set-Service -Name $Service -Status stopped -StartupType disabled
+}
+
+if([System.Environment]::OSVersion.Version.Build -eq 22000) {
+    foreach ($Service in $Services11) {
+        Stop-Service -Name $Service -Force
+        Set-Service -Name $Service -Status stopped -StartupType disabled
+    }
 }
