@@ -1,4 +1,5 @@
-$packages10 = @(                                      # Windows 10 Packages
+$packages = @(            
+# Windows 10
     "Microsoft.549981C3F5F10"                       # Cortana
     "Microsoft.BingWeather"                         # Microsoft Bing Weather
     "Microsoft.BingFinance"                         # Microsoft Bing Finance
@@ -44,9 +45,7 @@ $packages10 = @(                                      # Windows 10 Packages
     "Disney.37853FC22B2CE"                          # Disney+
     "Microsoft.DesktopAppInstaller"                 # Testing removal Microsoft Desktop App Installer (Double Click Installer)
     "Microsoft.Screensketch"                        # Testing removal Microsoft Screen Sketch (Snipping Tool)
-)
-
-$packages11 = @(                                    # Windows 11 Packages
+# Windows 11
     "Microsoft.GamingApp"                           # Microsoft GamingApp
     "Microsoft.Paint"                               # Microsoft Paint
     "Microsoft.PowerAutomateDesktop"                # Microsoft Power Automate Desktop
@@ -55,17 +54,9 @@ $packages11 = @(                                    # Windows 11 Packages
     "Microsoft.OneDriveSync"                        # Microsoft OneDrive Sync
 )
 
-foreach ($package in $packages10) {
+foreach ($package in $packages) {
     Get-AppxPackage -Name $package -AllUsers | Remove-AppxPackage
     Get-AppXProvisionedPackage -Online | Where-Object DisplayName -EQ $package | Remove-AppxProvisionedPackage -Online
-}
-
-# Additional things to remove in Windows 11
-if([System.Environment]::OSVersion.Version.Build -eq 22000) {
-    foreach ($package in $packages11) {
-        Get-AppxPackage -Name $package -AllUsers | Remove-AppxPackage
-        Get-AppXProvisionedPackage -Online | Where-Object DisplayName -EQ $package | Remove-AppxProvisionedPackage -Online
-    }
 }
 
 
