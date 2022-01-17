@@ -47,11 +47,9 @@ $packages10 = @(                                      # Windows 10 Packages
 )
 
 $packages11 = @(                                    # Windows 11 Packages
-    "Microsoft.DesktopAppInstaller"                 # Microsoft Desktop App Installer
     "Microsoft.GamingApp"                           # Microsoft GamingApp
     "Microsoft.Paint"                               # Microsoft Paint
     "Microsoft.PowerAutomateDesktop"                # Microsoft Power Automate Desktop
-    "Microsoft.SecHealthUI"                         # Microsoft Update Health Tools
     "Microsoft.Todos"                               # Microsoft To Do
     "MicrosoftTeams"                                # Microsoft Teams
 )
