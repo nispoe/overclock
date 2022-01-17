@@ -33,7 +33,7 @@ if (Test-Path "$driveLetter`:\sources") {
     (Get-Content -path $autounattendFile -Raw) -replace "nispoe","$loginName" | Set-Content -Path $autounattendFile
 
     # Copy autoattend.xml and install_Windows 10 Pro.clg files to USB drive
-    Start-BitsTransfer "$autounattendFile" -Destination "$driveLetter`:\" -Description "$autounattendFile\install_Windows 10 Pro.clg to $driveLetter`:\install_Windows 10 Pro.clg" -DisplayName "Copying file"
+    Copy-Item "$autounattendFile" -Destination "$driveLetter`:\"
     Invoke-WebRequest -Uri "$shortcutURIPath/install_Windows 10 Pro.clg" -OutFile "$driveLetter`:\sources\install_Windows 10 Pro.clg"
 
     # Cleanup nispoe working directory
