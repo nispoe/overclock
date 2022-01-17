@@ -21,7 +21,6 @@ $Services = @(
 # Windows 11
     "lfsvc"                                         # Geolocation Service
     "InstallService"                                # Microsoft Store Install Service
-    "nsi"
 )
 
 foreach ($Service in $Services) {
