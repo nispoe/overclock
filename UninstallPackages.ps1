@@ -59,16 +59,18 @@ foreach ($package in $packages10) {
     Get-AppXProvisionedPackage -Online | Where-Object DisplayName -EQ $package | Remove-AppxProvisionedPackage -Online
 }
 
+$isWin11 = [System.Environment]::OSVersion.Version.Build -eq 22000
+
 # Additional things to remove in Windows 11
-if([System.Environment]::OSVersion.Version.Build -eq 22000) {
+if($isWin11) {
     foreach ($package in $packages11) {
         Get-AppxPackage -Name $package -AllUsers | Remove-AppxPackage
         Get-AppXProvisionedPackage -Online | Where-Object DisplayName -EQ $package | Remove-AppxProvisionedPackage -Online
     }
 }
 
-
-if (Test-Path "$env:windir\SysWOW64\OneDriveSetup.exe") {
+# Removing OnDrive in Windows 10. For windows 11 seems the uninstall removes cleanly
+if(!($isWin11isWin11) -and (Test-Path "$env:windir\SysWOW64\OneDriveSetup.exe")) {
     Get-Process onedrive | Stop-Process -Force
     Start-Process "$env:windir\SysWOW64\OneDriveSetup.exe" "/uninstall"
 }
