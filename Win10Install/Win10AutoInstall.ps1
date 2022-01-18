@@ -24,7 +24,7 @@ if (Test-Path "$driveLetter`:\sources") {
     Remove-Item "$driveLetter`:\sources\install.esd"
 
     # Copy autounattend.xml file to nispoe working directory to modify
-    $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/Win10AutoInstall"
+    $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/Win10Install"
     Invoke-WebRequest -Uri "$shortcutURIPath/autounattend.xml" -OutFile "$nispoePath\autounattend.xml"
 
     # Replace Computer Name and Login Name
