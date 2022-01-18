@@ -69,8 +69,8 @@ if($isWin11) {
     }
 }
 
-# Removing OnDrive in Windows 10. For windows 11 seems the uninstall removes cleanly
-if(!($isWin11isWin11) -and (Test-Path "$env:windir\SysWOW64\OneDriveSetup.exe")) {
+# Removing OneDrive in Windows 10. For windows 11 seems the uninstall removes cleanly
+if(!($isWin11) -and (Test-Path "$HOME\AppData\Local\Microsoft\OneDrive\OneDrive.exe")) {
     Get-Process onedrive | Stop-Process -Force
     Start-Process "$env:windir\SysWOW64\OneDriveSetup.exe" "/uninstall"
 }
