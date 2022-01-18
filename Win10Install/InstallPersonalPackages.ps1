@@ -24,12 +24,12 @@ $githubURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main"
 
 # Add 3DMark to the startup folder to trigger start when windows starts
 if (!(Test-Path "$startupPath\3DMark.url")) {
-    Invoke-WebRequest -Uri "$githubURIPath/shortcuts/3DMark.url" -OutFile "$startupPath\3DMark.url"
+    Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/3DMark.url" -OutFile "$startupPath\3DMark.url"
 }
 
 # Add shorcuts to system desktop
 if (!(Test-Path "$HOME\Desktop\HWiNFO64.lnk")) {
-    Invoke-WebRequest -Uri "$githubURIPath/shortcuts/HWiNFO64.lnk" -OutFile "$HOME\Desktop\HWiNFO64.lnk"
+    Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/HWiNFO64.lnk" -OutFile "$HOME\Desktop\HWiNFO64.lnk"
 }
 
 # Change background image
