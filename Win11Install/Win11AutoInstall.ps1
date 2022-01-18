@@ -13,7 +13,7 @@ if (!(Test-Path $nispoePath)) {
 
 if (Test-Path "$driveLetter`:\sources") {
     # Copy autounattend.xml file to nispoe working directory to modify (reusing the Windows 10 autounattend.xml file)
-    $shortcutURIPathWin10 = "https://raw.githubusercontent.com/nispoe/overclock/main/Win10AutoInstall"
+    $shortcutURIPathWin10 = "https://raw.githubusercontent.com/nispoe/overclock/main/Win10Install"
     Invoke-WebRequest -Uri "$shortcutURIPathWin10/autounattend.xml" -OutFile "$nispoePath\autounattend.xml"
 
     # Replace Computer Name and Login Name
@@ -23,7 +23,7 @@ if (Test-Path "$driveLetter`:\sources") {
 
     # Copy autoattend.xml and install_Windows 10 Pro.clg files to USB drive (seems Windows 11 generates file that is different, but named the same as Windows 10)
     Copy-Item "$autounattendFile" -Destination "$driveLetter`:\"
-    $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/Win11AutoInstall"
+    $shortcutURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main/Win11Install"
     Invoke-WebRequest -Uri "$shortcutURIPath/install_Windows 10 Pro.clg" -OutFile "$driveLetter`:\sources\install_Windows 10 Pro.clg"
 
     # Cleanup nispoe working directory
