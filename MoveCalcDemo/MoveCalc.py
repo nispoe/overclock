@@ -1,23 +1,26 @@
 import os
+from time import sleep
 import pyautogui
 
 # Open Windows Calculator
-# os.system('calc.exe')
-# pyautogui.click(x=1, y=1)
+os.system('calc.exe')
 
-pyautogui.click(".\MoveCalcDemo\images\standardButton.png")
+# Find the location of where to put the mouse pointer to drag window
+sleep(1)
+calcDragPointLocation = pyautogui.locateOnScreen(".\MoveCalcDemo\images\calcDrag.png")
+calcDragPoint = pyautogui.center(calcDragPointLocation)
+calcDragPointX, calcDragPointY = calcDragPoint
+pyautogui.moveTo(calcDragPointX, calcDragPointY, 1, pyautogui.easeInQuad)
 
-# calcDragPointLocation = pyautogui.locateOnScreen(".\MoveCalcDemo\images\calcDragPoint.png")
-# calcDragPoint = pyautogui.center(calcDragPointLocation)
-# calcDragPointX, calcDragPointY = calcDragPoint
-# pyautogui.moveTo(calcDragPointX, calcDragPointY, 1, pyautogui.easeInQuad)
+# Move the window to the 4 corners of the screen
+pyautogui.dragTo(100, 30, 1, button="left")
+sleep(2)
+pyautogui.dragTo(1500, 30, 1, button="left")
+sleep(2)
+pyautogui.dragTo(100, 450, 1, button="left")
+sleep(2)
+pyautogui.dragTo(1500, 450, 1, button="left")
+sleep(2)
 
-# pyautogui.dragTo(125, 50, 1, button="left")
-
-# pyautogui.click(".\MoveCalcDemo\images\a.png")
-
-
-# calcStandardLocation = pyautogui.locateOnScreen(".\MoveCalcDemo\images\standardButton.png")
-# calcStandardPoint = pyautogui.center(calcStandardLocation)
-# calcStandardButtonX, calcStandardButtonY = calcStandardPoint
-# pyautogui.moveTo(calcStandardButtonX, calcStandardButtonY, 1, pyautogui.easeInQuad)
+# Close the calculator app
+pyautogui.hotkey('alt', 'f4')
