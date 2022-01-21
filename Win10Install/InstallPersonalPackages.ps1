@@ -35,3 +35,6 @@ if (!(Test-Path "$HOME\Desktop\HWiNFO64.lnk")) {
 # Change background image
 Invoke-WebRequest -Uri "$githubURIPath/images/eopsinDesktop.png" -OutFile "$HOME\Pictures\eopsinDesktop.png"
 Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value "$HOME\Pictures\eopsinDesktop.png"
+
+# Turn on Dark Mode systemwide
+Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
