@@ -49,7 +49,7 @@ Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value "$H
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
 
 # Turn off UAC
-Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0
+Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0
 
 # Copy toolbox items
 $nispeToolboxPath = "C:\nispoe\toolbox\Windows"
