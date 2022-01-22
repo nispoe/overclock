@@ -19,13 +19,15 @@ if (!(Test-Path "C:\Program Files\HWiNFO64\HWiNFO64.exe")) {
 }
 
 # Install AIDA64 Extreme 
-if (!(Test-Path "C:\Program Files (86)\FinalWire\AIDA64 Extreme\aida64.exe")) {
+if (!(Test-Path "C:\Program Files (x86)\FinalWire\AIDA64 Extreme\aida64.exe")) {
     choco install aida64-extreme --force --ignore-checksums -y
 }
 
 # BenchMate has to be downloaded and installed manually since there is no direct URL
 # The thing I can do is create a reminder by opening a browser to BenchMate
-Start-Process "https://benchmate.org/"
+if (!(Test-Path "C:\Program Files (x86)\Benchmate\BenchMate.exe")) {
+    Start-Process "https://benchmate.org/"
+}
 
 # Startup and shorcut paths
 $startupPath = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
