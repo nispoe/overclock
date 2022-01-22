@@ -29,6 +29,13 @@ if (!(Test-Path "C:\Program Files (x86)\Benchmate\BenchMate.exe")) {
     Start-Process "https://benchmate.org/"
 }
 
+# Linpack Xtreme has to be downloaded and installed manually since there is no direct URL
+# open to the download page for installation reminder
+# Make sure to unzip the file and download to C:\Program Files\
+if(!(Test-Path "C:\Program Files\LinpackXtreme\LinpackXtreme_64.exe")) {
+    Start-process "https://www.techpowerup.com/download/linpack-xtreme/"
+}
+
 # Startup and shorcut paths
 $startupPath = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 $githubURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main"
