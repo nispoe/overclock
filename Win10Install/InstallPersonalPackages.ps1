@@ -18,6 +18,15 @@ if (!(Test-Path "C:\Program Files\HWiNFO64\HWiNFO64.exe")) {
     choco install hwinfo --force -y
 }
 
+# Install AIDA64 Extreme 
+if (!(Test-Path "C:\Users\nispoe\AppData\Local\Programs\BenchMate\BenchMate.exe")) {
+    choco install aida64-extreme
+}
+
+# BenchMate has to be downloaded and installed manually since there is no direct URL
+# The thing I can do is create a reminder by opening a browser to BenchMate
+Start-Process "https://benchmate.org/"
+
 # Startup and shorcut paths
 $startupPath = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 $githubURIPath = "https://raw.githubusercontent.com/nispoe/overclock/main"
@@ -38,3 +47,6 @@ Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value "$H
 
 # Turn on Dark Mode systemwide
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
+
+# Turn off UAC
+Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0
