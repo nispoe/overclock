@@ -1,3 +1,4 @@
+# This script was made to work under 1080p resolution
 import os
 from time import sleep
 import pyautogui
@@ -14,13 +15,13 @@ pyautogui.moveTo(calcDragPointX, calcDragPointY, 1, pyautogui.easeInQuad)
 
 # Move the window to the 4 corners of the screen
 pyautogui.dragTo(100, 30, 1, button="left")
-sleep(2)
+sleep(1)
 pyautogui.dragTo(1500, 30, 1, button="left")
-sleep(2)
+sleep(1)
 pyautogui.dragTo(100, 450, 1, button="left")
-sleep(2)
+sleep(1)
 pyautogui.dragTo(1500, 450, 1, button="left")
-sleep(2)
+sleep(1)
 
 # Close the calculator app
-pyautogui.hotkey('alt', 'f4')
+# pyautogui.hotkey('alt', 'f4')
