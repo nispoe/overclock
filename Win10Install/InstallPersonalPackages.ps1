@@ -50,3 +50,7 @@ Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Pe
 
 # Turn off UAC
 Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name ConsentPromptBehaviorAdmin -Value 0
+
+# Copy toolbox items
+$nispeToolboxPath = "C:\nispoe\toolbox\"
+Invoke-WebRequest -Uri "$githubURIPath/toolbox/Windows/EnableStartupApps.ps1" -OutFile "$nispeToolboxPath\EnableStartupApps.ps1"
