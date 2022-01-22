@@ -20,7 +20,7 @@ if (!(Test-Path "C:\Program Files\HWiNFO64\HWiNFO64.exe")) {
 
 # Install AIDA64 Extreme 
 if (!(Test-Path "C:\Users\nispoe\AppData\Local\Programs\BenchMate\BenchMate.exe")) {
-    choco install aida64-extreme
+    choco install aida64-extreme --force -y
 }
 
 # BenchMate has to be downloaded and installed manually since there is no direct URL
