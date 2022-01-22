@@ -19,8 +19,8 @@ if (!(Test-Path "C:\Program Files\HWiNFO64\HWiNFO64.exe")) {
 }
 
 # Install AIDA64 Extreme 
-if (!(Test-Path "C:\Users\nispoe\AppData\Local\Programs\BenchMate\BenchMate.exe")) {
-    choco install aida64-extreme --force -y
+if (!(Test-Path "C:\Program Files (86)\FinalWire\AIDA64 Extreme\aida64.exe")) {
+    choco install aida64-extreme --force --ignore-checksums -y
 }
 
 # BenchMate has to be downloaded and installed manually since there is no direct URL
