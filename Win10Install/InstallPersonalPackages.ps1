@@ -54,4 +54,6 @@ Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\C
 # Copy toolbox items
 $nispeToolboxPath = "C:\nispoe\toolbox\"
 Invoke-WebRequest -Uri "$githubURIPath/toolbox/Windows/EnableStartupApps.ps1" -OutFile "$nispeToolboxPath\Windows\EnableStartupApps.ps1"
+Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/EnableStartupApps - Shortcut.lnk" -OutFile "$HOME\Desktop\EnableStartupApps - Shortcut.lnk"
 Invoke-WebRequest -Uri "$githubURIPath/toolbox/Windows/OpenMemoryApps.ps1" -OutFile "$nispeToolboxPath\Windows\OpenMemoryApps.ps1"
+Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/OpenMemoryApps - Shortcut.lnk" -OutFile "$HOME\Desktop\OpenMemoryApps - Shortcut.lnk"
