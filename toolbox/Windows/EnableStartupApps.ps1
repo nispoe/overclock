@@ -1,5 +1,5 @@
 # Shortcut Created
-# powershell.exe -ExecutionPolicy Bypass -File "C:\nispoe\toolbox\Windows\EnableStartupApps.ps1"
+# powershell.exe -ExecutionPolicy Bypass -File "C:\nispoe\toolbox\EnableStartupApps.ps1"
 
 #Add 3DMark to the startup folder to trigger start when windows starts
 if (!(Test-Path "$startupPath\3DMark.url")) {
