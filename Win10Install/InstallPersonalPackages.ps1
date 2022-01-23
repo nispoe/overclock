@@ -68,9 +68,9 @@ Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\
 # Copy toolbox items
 $nispeToolboxPath = "C:\nispoe\toolbox"
 New-Item $nispeToolboxPath -ItemType Directory
-Invoke-WebRequest -Uri "$githubURIPath/toolbox/EnableStartupApps.ps1" -OutFile "$nispeToolboxPath\EnableStartupApps.ps1"
+Invoke-WebRequest -Uri "$githubURIPath/toolbox/Windows/EnableStartupApps.ps1" -OutFile "$nispeToolboxPath\EnableStartupApps.ps1"
 Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/EnableStartupApps - Shortcut.lnk" -OutFile "$HOME\Desktop\EnableStartupApps - Shortcut.lnk"
-Invoke-WebRequest -Uri "$githubURIPath/toolbox/OpenMemoryApps.ps1" -OutFile "$nispeToolboxPath\OpenMemoryApps.ps1"
+Invoke-WebRequest -Uri "$githubURIPath/toolbox/Windows/OpenMemoryApps.ps1" -OutFile "$nispeToolboxPath\OpenMemoryApps.ps1"
 Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/OpenMemoryApps - Shortcut.lnk" -OutFile "$HOME\Desktop\OpenMemoryApps - Shortcut.lnk"
 Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/HWiNFO64.lnk" -OutFile "$nispeToolboxPath\HWiNFO64.lnk"
 Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/CPUID CPU-Z.lnk" -OutFile "$nispeToolboxPath\CPUID CPU-Z.lnk"
