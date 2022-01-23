@@ -6,6 +6,6 @@ for ($i=1; $i -le 5; $i++) {
 }
 
 Invoke-Expression "& 'C:\nispoe\toolbox\HWiNFO64.lnk'"
-Invoke-Expression "& 'C:\nispoe\toolbox\LinpackXtreme_x64'"
+Invoke-Expression "& 'C:\nispoe\toolbox\LinpackXtreme_x64.lnk'"
 Invoke-Expression "& 'C:\nispoe\toolbox\BenchMate.lnk'"
 Invoke-Expression "& 'C:\nispoe\toolbox\AIDA64 Extreme.lnk'"
