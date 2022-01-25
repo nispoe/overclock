@@ -1,4 +1,4 @@
-# This script was made to work under 1080p resolution
+# This script was made to work under 1080p resolution and Windows 11
 import os
 from time import sleep
 import pyautogui
@@ -24,4 +24,4 @@ pyautogui.dragTo(1500, 450, 1, button="left")
 sleep(1)
 
 # Close the calculator app
-# pyautogui.hotkey('alt', 'f4')
+pyautogui.hotkey('alt', 'f4')
