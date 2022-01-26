@@ -4,7 +4,5 @@ if (!(Test-Path "C:\ProgramData\chocolatey\choco.exe")) {
 }
 
 # Install Nvidia Display Driver
-if (!(Test-Path "C:\Program Files\NVIDIA Corporation\Control Panel Client\nvcplui.exe")) {
-    choco feature enable -n=useRememberedArgumentsForUpgrades
-    cinst geforce-game-ready-driver --package-parameters="'/dch'" --force -y
-}
+choco feature enable -n=useRememberedArgumentsForUpgrades
+cinst geforce-game-ready-driver --package-parameters="'/dch'" --force -y
