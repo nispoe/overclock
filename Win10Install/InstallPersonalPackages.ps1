@@ -25,13 +25,14 @@ if (!(Test-Path "C:\Program Files (x86)\FinalWire\AIDA64 Extreme\aida64.exe")) {
 
 # BenchMate has to be downloaded and installed manually since there is no direct URL
 # The thing I can do is create a reminder by opening a browser to BenchMate
+# Make sure to install under the default location
 if (!(Test-Path "C:\Program Files (x86)\Benchmate\BenchMate.exe")) {
     Start-Process "https://benchmate.org/"
 }
 
 # Linpack Xtreme has to be downloaded and installed manually since there is no direct URL
 # open to the download page for installation reminder
-# Make sure to unzip the file and download to C:\Program Files\
+# Make sure to unzip the file and copy to C:\Program Files\
 if(!(Test-Path "C:\Program Files\LinpackXtreme\LinpackXtreme_x64.exe")) {
     Start-process "https://www.techpowerup.com/download/linpack-xtreme/"
 }
