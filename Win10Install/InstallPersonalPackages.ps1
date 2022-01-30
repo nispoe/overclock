@@ -32,7 +32,7 @@ if (!(Test-Path "C:\Program Files (x86)\Benchmate\BenchMate.exe")) {
 
 # Linpack Xtreme has to be downloaded and installed manually since there is no direct URL
 # open to the download page for installation reminder
-# Make sure to unzip the file and copy to C:\Program Files\
+# Make sure to unzip the file and copy to C:\Program Files\LinpackXtreme without the version at the end of the folder name
 if(!(Test-Path "C:\Program Files\LinpackXtreme\LinpackXtreme_x64.exe")) {
     Start-process "https://www.techpowerup.com/download/linpack-xtreme/"
 }
@@ -59,7 +59,7 @@ Invoke-WebRequest -Uri "$githubURIPath/images/eopsinDesktop.png" -OutFile "$HOME
 Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value "$HOME\Pictures\eopsinDesktop.png"
 
 # Turn on Dark Mode systemwide
-Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0
+Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type Dword -Force
 
 # Turn off UAC
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
