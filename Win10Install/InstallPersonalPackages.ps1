@@ -49,7 +49,6 @@ if (!(Test-Path "$startupPath\3DMark.url")) {
 # Add shorcuts to system desktop
 if (!(Test-Path "$HOME\Desktop\HWiNFO64.lnk")) {
     Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/HWiNFO64.lnk" -OutFile "$HOME\Desktop\HWiNFO64.lnk"
-    Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/CPUID CPU-Z.lnk" -OutFile "$HOME\Desktop\CPUID CPU-Z.lnk"
     Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/LinpackXtreme_x64.lnk" -OutFile "$HOME\Desktop\LinpackXtreme_x64.lnk"
     Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/AIDA64 Extreme.lnk" -OutFile "$HOME\Desktop\AIDA64 Extreme.lnk"
 }
