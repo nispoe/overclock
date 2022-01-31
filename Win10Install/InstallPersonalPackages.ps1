@@ -59,7 +59,8 @@ Invoke-WebRequest -Uri "$githubURIPath/images/eopsinDesktop.png" -OutFile "$HOME
 Set-ItemProperty -path 'HKCU:\Control Panel\Desktop\' -name wallpaper -value "$HOME\Pictures\eopsinDesktop.png"
 
 # Turn on Dark Mode systemwide
-Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type Dword -Force
+#Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name AppsUseLightTheme -Value 0 -Type Dword -Force
+Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize -Name SystemUsesLightTheme -Value 0 -Type Dword -Force
 
 # Turn off UAC
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
