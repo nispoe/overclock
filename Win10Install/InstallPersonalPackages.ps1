@@ -23,6 +23,26 @@ if (!(Test-Path "C:\Program Files (x86)\FinalWire\AIDA64 Extreme\aida64.exe")) {
     choco install aida64-extreme --force --ignore-checksums -y
 }
 
+# Install Intel XTU
+if (!(Test-Path "C:\Program Files\Intel\Intel(R) Extreme Tuning Utility\Client\XtuUiLauncher.exe")) {
+    choco install intel-xtu --force -y
+}
+
+# Install EVGA Precision X1
+#if (!(Test-Path "C:\Program Files\EVGA\ELeetTune.exe")) {
+    choco install evga-precision-x1 --force -y
+#}
+
+# Install EVGA ELEET
+if (!(Test-Path "C:\Program Files\EVGA\ELeetTune.exe")) {
+    choco install evga-eleet --force -y
+}
+
+# Install 3DMark
+#if (!(Test-Path "C:\Program Files\EVGA\ELeetTune.exe")) {
+    choco install 3dmark --force -y
+#}
+
 # BenchMate has to be downloaded and installed manually since there is no direct URL
 # The thing I can do is create a reminder by opening a browser to BenchMate
 # Make sure to install under the default location
