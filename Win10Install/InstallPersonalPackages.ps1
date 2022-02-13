@@ -71,6 +71,7 @@ if (!(Test-Path "$HOME\Desktop\HWiNFO64.lnk")) {
     Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/HWiNFO64.lnk" -OutFile "$HOME\Desktop\HWiNFO64.lnk"
     Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/LinpackXtreme_x64.lnk" -OutFile "$HOME\Desktop\LinpackXtreme_x64.lnk"
     Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/AIDA64 Extreme.lnk" -OutFile "$HOME\Desktop\AIDA64 Extreme.lnk"
+    Invoke-WebRequest -Uri "$githubURIPath/Win10Install/shortcuts/EVGA Precision X1.lnk" -OutFile "$HOME\Desktop\EVGA Precision X1.lnk"
 }
 
 # Change background image
