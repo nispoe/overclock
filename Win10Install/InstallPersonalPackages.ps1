@@ -29,9 +29,9 @@ if (!(Test-Path "C:\Program Files\Intel\Intel(R) Extreme Tuning Utility\Client\X
 }
 
 # Install EVGA Precision X1
-#if (!(Test-Path "C:\Program Files\EVGA\ELeetTune.exe")) {
+if (!(Test-Path "C:\Program Files\EVGA\Precision X1\PrecisionX_x64.exe")) {
     choco install evga-precision-x1 --force -y
-#}
+}
 
 # Install EVGA ELEET
 if (!(Test-Path "C:\Program Files\EVGA\ELeetTune.exe")) {
@@ -39,9 +39,9 @@ if (!(Test-Path "C:\Program Files\EVGA\ELeetTune.exe")) {
 }
 
 # Install 3DMark
-#if (!(Test-Path "C:\Program Files\EVGA\ELeetTune.exe")) {
+if (!(Test-Path "C:\Program Files\UL\3DMark\3DMark.exe")) {
     choco install 3dmark --force -y
-#}
+}
 
 # BenchMate has to be downloaded and installed manually since there is no direct URL
 # The thing I can do is create a reminder by opening a browser to BenchMate
